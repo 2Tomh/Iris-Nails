@@ -1,0 +1,20 @@
+.signup {
+    margin-top: 50px;
+}
+
+.title {
+    font-family:Arial, Helvetica, sans-serif;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 45px;
+}
+.headline{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:rgb(171, 122, 122);
+}
+
+.error{
+    color:red;
+    margin:0;
+    font-size: 16px;
+}

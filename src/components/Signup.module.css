@@ -1,0 +1,17 @@
+.title {
+
+    text-align: center;
+    font-size: 45px;
+}
+
+.subtitle {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.error{
+    color:red;
+    margin:0;
+    font-size: 16px;
+}

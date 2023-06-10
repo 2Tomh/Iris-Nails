@@ -1,7 +1,8 @@
 import { Button, TextField } from "@mui/material";
 import styles from './Signup.module.css'
-import {signup} from "../apis/auth";
+import {signup} from "../../apis/auth";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 const Signup = (props) => {
@@ -11,11 +12,13 @@ const Signup = (props) => {
     const [address, setAddress] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const [error , setError] = useState("")
+    const navigate = useNavigate()
 
     const onClickSignup = async (e) => {
         e.preventDefault()
         try{
             await signup(username, password, mail, address, phoneNumber)
+            navigate("/")
         }
         catch(err){
             if(err.response.status == 401){
@@ -35,7 +38,7 @@ const Signup = (props) => {
             <TextField variant="outlined" label="E-Mail" value={mail} onChange={(e) => setMail(e.target.value)} required={true} />
             <TextField variant="outlined" label="Password" type="password"  value={password} onChange={(e) => setPassword(e.target.value)} required={true}/>
             {error && <p className={styles.error}>{error}</p>}
-            <Button variant="outlined" onClick={onClickSignup} type="submit">Sign up</Button>
+            <Button variant="outlined" onClick={onClickSignup} type="submit" >Sign up</Button>
             <div>
                 <span>Have An account?</span>
                 <Button variant="text" onClick={()=>props.onClickLogin(true)}>Log in </Button>

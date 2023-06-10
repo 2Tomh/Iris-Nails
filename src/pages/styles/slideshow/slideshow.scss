@@ -1,0 +1,53 @@
+.fadeInUp {
+  animation: fadeInUp 6s infinite;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInUp {
+  
+  10% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 20%, 0);
+    transform: translate3d(0, 20%, 0);
+  }
+  20% {
+      opacity: 0;
+    transform: none;
+  }
+
+}
+
+.slideshow-container {
+  background-color: #f6f6f6;
+}
+
+.backgroundImage {
+  position: relative;
+  animation: movingImage 7s linear infinite;
+  animation-direction: alternate;
+}
+
+@keyframes movingImage {
+  0% {
+    right: 0px;
+  }
+  15% {
+    right: 20px;
+  }
+  25% {
+    right: 30px;
+  }
+  35% {
+    right: 45px;
+  }
+  50% {
+    right: 65px;
+  }
+  75% {
+    right: 50px;
+  }
+  100% {
+    right: 40px;
+  }
+}

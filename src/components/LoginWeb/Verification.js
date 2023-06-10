@@ -1,6 +1,6 @@
 import { Button, TextField } from "@mui/material"
 import { useState } from "react"
-import { verification } from "../apis/auth"
+import { verification } from "../../apis/auth"
 import styles from './Verification.module.css'
 
 

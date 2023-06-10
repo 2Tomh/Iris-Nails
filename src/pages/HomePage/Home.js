@@ -1,27 +1,33 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Button, Paper, Typography } from '@mui/material';
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import About from "./About"
 import backgroundImage from "../images/pink-background.jpg"
 import ServicesImageText from "./ServicesImageText"
 import ButtomNav from '../Nav/ButtomNav';
-import Carousel from "react-material-ui-carousel";
+import Carousel from 'react-material-ui-carousel'
+import slide1 from "../images/eyebrow3.png"
+import slide2 from "../images/nails2.png"
+import slide3 from "../images/eyebrow2.png"
+import slide4 from "../images/nails1.png"
+import slide5 from "../images/eyebrow1.png"
+import slide6 from "../images/nails3.png"
+import slide7 from "../images/nails5.png"
+import slide8 from "../images/nails6.png"
 
-import slide1 from "../images/slide1.jpeg"
-import slide2 from "../images/slide2.jpg"
-import slide3 from "../images/slide3.jpg"
-import slide4 from "../images/slide4.jpg"
-import slide5 from "../images/slide5.jpg"
-import slide6 from "../images/slide6.jpg"
-let FloatingImage = [
-    <img src={slide6} key="6" />,
-    <img src={slide5} key="5" />,
-    <img src={slide4} key="4" />,
-    <img src={slide3} key="3" />,
-    <img src={slide2} key="2" />,
-    <img src={slide1} key="1" />,
 
-];
+const items = [
+    { img: slide1, className: "fadeInUp" },
+    { img: slide2, className: "fadeInUp" },
+    { img: slide3, className: "fadeInUp" },
+    { img: slide4, className: "fadeInUp" },
+    { img: slide5, className: "fadeInUp" },
+    { img: slide6, className: "fadeInUp" },
+    { img: slide7, className: "fadeInUp" },
+    { img: slide8, className: "fadeInUp" },
+]
+
+
 
 const Homepage = () => {
     const theme = useTheme();
@@ -30,28 +36,41 @@ const Homepage = () => {
     return (
 
         <Box>
-
             <About
                 imageBackgroundSrc={backgroundImage}
                 containerStyles={slideShowContainerStyles}
                 backgroundImageStyles={slideShowBackgroundStyles}
+                imageStyles={slideShowImageStyles}
+
+
             />
             <Box
                 style={{
-                    height: "600px",
                     display: "flex",
-                    alignItems: "center",
-                    margin: isDesktop ? "40px 0px 20px 0px" : "0px 0px 30px 0px",
+                    margin: isDesktop ? "40px 0px 20px 0px" : "40px 0px 30px 0px",
                     flexDirection: isDesktop ? "row" : "column",
-                    height: isDesktop ? "600px" : "unset",
+                    height: isDesktop ? "300px" : "unset",
+                    justifyContent: "center",
+                    objectfit: "contain"
                 }}
             >
-                <Box>
-                <Carousel IndicatorIcon={FloatingImage} swipe={true} />
+
+                <Box style={{ width: '30%', objectfit: "contain" }} sx={{ paddingleft: "auto", paddingright: "auto", }}>
+                    <Carousel
+                        images={items}
+                        autoPlay={true}
+                        interval={4000}
+                        indicatorIconButtonProps={{ style: { display: "none" } }}
+                    >
+                        {
+                            items.map((item, i) => <Item key={i} item={item} />)
+                        }
+                    </Carousel>
                 </Box>
-                   <Box
+
+                <Box
                     style={{
-                        width: "100%",
+                        width: "50%",
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "center",
@@ -62,29 +81,32 @@ const Homepage = () => {
                 >
                     <Typography
                         style={{ fontFamily: "monospace", direction: "rtl" }}
-                        variant="h3"
-                    >
-                        למה הלקוחות שלנו בוחרים בי?
+                        variant="h3">
+                        מה ניתן לעשות אצלי?
                     </Typography>
+
                     <Typography
                         style={{ fontFamily: "monospace" }}
                         variant="h6"
                     >
-                        יש מגוון רב של אופציות, הכל נעשה בצורה מדויקת
+                        מגוון רב של טיפולים, הכל ייעשה בצורה מדויקת
                     </Typography>
-                    <Typography variant="subtitle1">
-                        אצלי תמצאי את כל סוגי הלק, איכות ועיצוב ברמה גבוהה
-                    </Typography>
-
-
                 </Box>
             </Box>
-            
             <ServicesImageText />
             <ButtomNav />
         </Box>
     );
 };
+
+
+function Item(props) {
+    return (
+        <Paper>
+            <img style={{ height: '300px', width: "100%" , objectFit:"contain"}} src={props.item.img} />
+        </Paper>
+    )
+}
 
 const slideShowImageStyles = {
     maxWidth: "400px",
@@ -94,6 +116,8 @@ const slideShowImageStyles = {
     top: "15%",
     height: "85%",
     zIndex: "999",
+
+
 };
 
 const slideShowBackgroundStyles = {

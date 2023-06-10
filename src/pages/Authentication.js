@@ -1,9 +1,9 @@
 import { useState } from "react";
-import Login from "../components/Login";
-import Signup from "../components/Signup";
+import Login from "../components/LoginWeb/Login";
+import Signup from "../components/LoginWeb/Signup";
 import styles from "./Authentication.module.css"
 import { Paper } from "@mui/material";
-import Verification from "../components/Verification";
+import Verification from "../components/LoginWeb/Verification";
 
 
 const Authentication = () => {
@@ -13,7 +13,7 @@ const Authentication = () => {
    
     return (
         <div className={styles.container}>
-            <Paper elevation={2} style={{ padding: '50px', background: "#ffd6d6" }}>
+            <Paper elevation={2} style={{ padding: '50px', background: "#ffd6d6", maxHeight:"-webkit-fill-available" }}>
                 <form className={styles.form}>
                     {isVerification ? <Verification onVerification={setIsVerification} onClickLogin={setIsLogin} /> :
                         <>

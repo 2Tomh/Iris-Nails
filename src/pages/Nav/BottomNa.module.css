@@ -1,0 +1,10 @@
+.text {
+    background-color: pink;
+    font-size: 18px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    gap:50px;
+    font-family: sans-serif;
+    margin-left: auto;
+}

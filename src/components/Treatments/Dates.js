@@ -6,7 +6,8 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateCalendar } from '@mui/x-date-pickers';
 import styles from "../Treatments/Date.module.css"
 import { Button } from "@mui/material";
-import { useState } from 'react';
+import { getAvailableHour } from '../../apis/appointment';
+
 
 
 
@@ -14,21 +15,29 @@ import { useState } from 'react';
 
 const DateComponent = (props) => {
     
-    
     const onChangeDate = (e) => {
         props.setDate(e.toDate())
     }
+    const valid = function (current) {
+        return current.day() == 5 || current.day() == 6;
+    };
 
-   
+    const validateDate = async () => {
+        const response = await getAvailableHour(props.date)
+        const bookedHours = response.data;
+        if(bookedHours.length >= 5) return alert("This day is fully booked, try another");
+        props.nextStep();
+    }
+
     moment.locale("he")
     return (
         <div className={styles.container}>
             <form className={styles.formContainer}>
                 <LocalizationProvider dateAdapter={AdapterMoment} adapterLocale={'he'} >
                     <h1 className={styles.h1}>אנא בחר תאריך</h1>
-                    <DateCalendar  onChange={onChangeDate} className={styles.calander} disablePast />
+                    <DateCalendar onChange={onChangeDate} className={styles.calander} disablePast shouldDisableDate={valid} />
                 </LocalizationProvider>
-                <Button variant="outlined" onClick={props.nextStep}  sx={{width:'-webkit-fill-available',borderRadius:'17px'}} disabled={!props.date}>אישור</Button>
+                <Button variant="outlined" onClick={validateDate} sx={{ width: '-webkit-fill-available', borderRadius: '17px' }} disabled={!props.date}>אישור</Button>
             </form>
         </div>
     );

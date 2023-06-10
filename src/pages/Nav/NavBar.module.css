@@ -1,0 +1,49 @@
+.text {
+    background-color: pink;
+    font-size: 18px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    gap:50px;
+    font-family: sans-serif;
+    
+}
+
+.nav{
+    display: flex;
+    gap: 50px;
+    font-family: unset;
+    justify-content: center;
+    margin-left: auto;
+    direction: rtl;
+
+    }
+.options{
+    gap:50px;
+    flex-direction: column;
+    margin-top:"4%"
+}
+
+.logo{
+    height: "50px";
+    display: "flex";
+    justify-Content: "center";
+    align-Items: "center";
+    width: '15%';
+    padding-Top: '10px'
+}
+.divContainer{
+    
+    display:"flex";
+    align-Items: "center";
+    flex-Direction: "column";
+    margin-Top: "75px";
+}
+
+.button{
+    display: flex;
+    gap: 50px;
+    font-family: unset;
+    justify-content: center;
+    margin-right: 50%;
+}

@@ -1,8 +1,10 @@
 import { Button, TextField } from "@mui/material";
 import styles from "./Login.module.css"
-import { login } from "../apis/auth";
-import { useEffect, useState } from "react";
+import { login } from "../../apis/auth";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../context/userContext";
+import { userInfo } from "../../utils/user";
 
 const Login = (props) => {
 
@@ -10,7 +12,7 @@ const Login = (props) => {
     const [username, setUserName] = useState("")
     const [error, setError] = useState("");
 
-    
+    const {setUser} = useContext(UserContext)
 
     const navigate = useNavigate()
 
@@ -24,6 +26,7 @@ const Login = (props) => {
             const response = await login(username, password);
             if(response.data){
                 localStorage.setItem('token', response.data)
+                setUser(userInfo());
                 navigate("/Home")
             }
         }
@@ -33,6 +36,8 @@ const Login = (props) => {
             }
         }
     }
+
+ 
 
     const handleError = (msg, time) => {
         setError(msg);

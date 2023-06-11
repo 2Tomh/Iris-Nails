@@ -5,5 +5,5 @@ export const getPurchases = () => {
 }
 
 export const newPurchase = (quantity, productId) => {
-    return axiosInstance.post("/purchase", {quantity, productId});;
+    return axiosInstance.post("/purchase", {quantity, productId });;
 }

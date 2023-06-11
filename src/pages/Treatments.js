@@ -26,7 +26,7 @@ const Treatments = (props) => {
     const onSubmit = async () => {
         try {
             await appointment(date, hour, treatments)
-            navigate("/Home")
+            navigate("/")
 
         } catch (err) {
             if (err.response.status == 403) {

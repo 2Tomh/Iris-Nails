@@ -45,20 +45,6 @@ const ListOfProducts = () => {
         setProducts(newSort)
     }
 
-    const [counter, setCounter] = useState(0);
-    const [total, setToal] = useState([0]);
-    const increase = () => {
-        setCounter(counter => counter + 1)
-    }
-    const decrease = () => {
-        setCounter(counter => counter - 1)
-    }
-
-    const totalCounter = () => {
-        setToal({ counter })
-    }
-
-
     return (
         <Paper style={{ height: "100%" }}>
             <h1 style={{ textAlign: "center", color: "black" }}>ניהול מלאי</h1> <br /><br />
@@ -68,9 +54,9 @@ const ListOfProducts = () => {
                         <TableRow >
                             <TableCell align="center" sx={{ borderBottomColor: "black", fontWeight: "bold", fontSize: "x-large" }} >תמונה</TableCell>
                             <TableCell align="center" sx={{ borderBottomColor: "black", fontWeight: "bold", fontSize: "x-large" }} >שם</TableCell>
-                            <TableCell align="center" sx={{ borderBottomColor: "black", fontWeight: "bold", fontSize: "x-large" }}>כמות</TableCell>
+                            <TableCell align="center" sx={{ borderBottomColor: "black", fontWeight: "bold", fontSize: "x-large" }}>כמות בפועל</TableCell>
                             <TableCell align="center" sx={{ borderBottomColor: "black", fontWeight: "bold", fontSize: "x-large" }}>כמות שצריך להזמין </TableCell>
-                            <TableCell align="center" sx={{ borderBottomColor: "black", fontWeight: "bold", fontSize: "x-large" }}>מחיר</TableCell>
+                            <TableCell align="center" sx={{ borderBottomColor: "black", fontWeight: "bold", fontSize: "x-large" }} > מחיר בש"ח</TableCell>
                             <TableCell onClick={SortCategory} align="center" sx={{ borderBottomColor: "black", fontWeight: "bold", fontSize: "x-large" }}>תחום </TableCell>
                             <TableCell align="center" sx={{ borderBottomColor: "black", fontWeight: "bold", fontSize: "x-large" }}>סך הכל</TableCell>
 
@@ -79,7 +65,7 @@ const ListOfProducts = () => {
 
                     <TableBody>
                         {products.length > 0 && products.slice(pg * rpg, pg * rpg + rpg).map((p, index) => (
-                            <Product key={index} quantity={p.quantity} name={p.name} price={p.price} category={p.category} image={p.image}/>
+                            <Product key={index} quantity={p.quantity} name={p.name} price={p.price} category={p.category} image={p.image} productId={p._id}/>
 
                         ))}
                     </TableBody>

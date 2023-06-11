@@ -12,7 +12,6 @@ import TablePagination from '@mui/material/TablePagination';
 import Paper from "@mui/material/Paper";
 import { useContext } from 'react';
 import { UserContext } from '../context/userContext';
-import ButtomNav from '..//pages/Nav/ButtomNav';
 
 
 const ListAppoitment = () => {
@@ -28,7 +27,7 @@ const ListAppoitment = () => {
             setAppointments(result.data)
         }
         catch (err) {
-            navigate('/Home')
+            navigate('/')
         }
     }
 

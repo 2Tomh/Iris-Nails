@@ -3,6 +3,7 @@ import styles from "./Product.module.css";
 import AddCircleOutlineSharpIcon from '@mui/icons-material/AddCircleOutlineSharp';
 import RemoveCircleOutlineSharpIcon from '@mui/icons-material/RemoveCircleOutlineSharp';
 import { TableCell, TableRow } from "@mui/material";
+import { newPurchase } from "../../apis/purchases";
 const Product = (props) => {
     const [prevProps, setPrevProps] = useState(props);
     const [counter, setCounter] = useState(0);
@@ -15,7 +16,8 @@ const Product = (props) => {
         setCounter(counter => counter - 1)
     }
 
-    const totalCounter = () => {
+    const totalCounter = async () => {
+        await newPurchase(total , props.productId)
         setTotal( counter )
     }
 
@@ -25,6 +27,7 @@ const Product = (props) => {
             setTotal(0);
         }
     },[props])
+
 
     return (
         <TableRow >

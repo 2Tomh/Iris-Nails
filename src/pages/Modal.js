@@ -9,7 +9,7 @@ const Modal = () => {
 
     return (
         <div >
-            <CustomModal open={true} close={() => navigate("/Home")}>
+            <CustomModal open={true} close={() => navigate("/")}>
                 <div style={styles.divContainer} className="formContainer"></div>
             </CustomModal>
         </div>

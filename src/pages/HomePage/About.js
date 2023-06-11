@@ -81,10 +81,12 @@ const About = (props) => {
                         fontFamily: "Miriam Libre, sans-serif",
                         fontSize: "20px",
                     }}
-                    textAlign="right"
-                >
-                    אצלנו תמצאי את כל סוגי הלק, איכות ועיצוב וצורות לק ברמה <br />
+                    textAlign="right">
+                    אצלנו תמצאי את כל סוגי הלק, איכות ועיצוב וצורות לק ברמה
+                    <br />
                     הגבוה ביותר
+                    <br/><br/><br/>
+                    לקביעת תור אנא התחבר/י
                 </Typography>
             </Box>
         </Box>

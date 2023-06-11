@@ -2,7 +2,6 @@ import { Button, TextField } from "@mui/material";
 import styles from './Signup.module.css'
 import {signup} from "../../apis/auth";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 
 const Signup = (props) => {
@@ -12,13 +11,13 @@ const Signup = (props) => {
     const [address, setAddress] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const [error , setError] = useState("")
-    const navigate = useNavigate()
+    
 
     const onClickSignup = async (e) => {
         e.preventDefault()
         try{
             await signup(username, password, mail, address, phoneNumber)
-            navigate("/")
+            props.onClickLogin(true);
         }
         catch(err){
             if(err.response.status == 401){

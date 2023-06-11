@@ -27,7 +27,7 @@ const Login = (props) => {
             if(response.data){
                 localStorage.setItem('token', response.data)
                 setUser(userInfo());
-                navigate("/Home")
+                navigate("/")
             }
         }
         catch (err) {
@@ -49,7 +49,7 @@ const Login = (props) => {
     useEffect(()=>{
         const token = localStorage.getItem('token');
         if(token){
-            navigate('/Home');
+            navigate('/');
         }
     },[])
 

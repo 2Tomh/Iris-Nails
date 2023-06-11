@@ -2,7 +2,7 @@ import { Button, ToggleButton, ToggleButtonGroup } from "@mui/material";
 import styles from "../Treatments/Availabilty.module.css"
 import { useEffect, useState } from "react";
 import DoneIcon from '@mui/icons-material/Done';
-import { appointment, getAvailableHour } from "../../apis/appointment";
+import {getAvailableHour } from "../../apis/appointment";
 
 
 const Availabilty = (props) => {

@@ -16,9 +16,6 @@ const ListPurchases = () => {
     }, [])
 
     
-
-    console.log(purchase)
-
     return (
         <Paper style={{ height: "100vh" }}>
             <h1 style={{ textAlign: "center", color: "black" }}>רשימת קניות למוצרים</h1> <br/><br/>

@@ -16,9 +16,9 @@ import { UserContext } from '../context/userContext';
 
 const ListAppoitment = () => {
     const { user } = useContext(UserContext);
-
     const [appointments, setAppointments] = useState([]);
-
+    const [pg, setpg] = useState(0);
+    const [rpg, setrpg] = useState(5);
     const navigate = useNavigate()
 
     const getAllAppointments = async () => {
@@ -65,8 +65,6 @@ const ListAppoitment = () => {
         setAppointments(newSort)
     }
 
-    const [pg, setpg] = useState(0);
-    const [rpg, setrpg] = useState(5);
 
     function handleChangePage(event, newpage) {
         setpg(newpage);

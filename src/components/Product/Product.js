@@ -8,6 +8,7 @@ const Product = (props) => {
     const [prevProps, setPrevProps] = useState(props);
     const [counter, setCounter] = useState(0);
     const [total, setTotal] = useState(0);
+    
     const increase = () => {
         setCounter(counter => counter + 1)
     }

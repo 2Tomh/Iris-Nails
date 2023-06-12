@@ -9,14 +9,14 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from "@mui/material/Paper";
 import TablePagination from '@mui/material/TablePagination';
-import styles from "./Product.module.css";
-import AddCircleOutlineSharpIcon from '@mui/icons-material/AddCircleOutlineSharp';
-import RemoveCircleOutlineSharpIcon from '@mui/icons-material/RemoveCircleOutlineSharp';
+
 
 
 const ListOfProducts = () => {
     const [products, setProducts] = useState([])
-
+const [pg, setpg] = useState(0);
+    const [rpg, setrpg] = useState(5);
+    
     const fetchProducts = async () => {
         const response = await getProducts();
         setProducts(response.data)
@@ -36,8 +36,6 @@ const ListOfProducts = () => {
         setpg(0);
     }
 
-    const [pg, setpg] = useState(0);
-    const [rpg, setrpg] = useState(5);
 
     function SortCategory() {
         const newSort = [...products].sort((a, b) => (

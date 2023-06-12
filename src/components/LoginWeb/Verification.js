@@ -39,13 +39,13 @@ const Verification = (props) => {
 
     return (
         <>
-            <h1 className={styles.title}>הכנס אימייל/שם משתמש ואנחנו נשלח לך אימות סיסמא לחשבון</h1>
+            <h8 className={styles.title}>הכנס אימייל /שם משתמש ואנחנו נשלח לך אימות סיסמא לחשבון</h8>
             <TextField label="User Name" variant="outlined" value={username} onChange={(e) => setUserName(e.target.value)} required={true} />
             {error && <p className={styles.error}>{error}</p>}
             <Button variant="text" type="submit" onClick={onVerification}>  אימות</Button>
-            <div>
-                <span>Have An account?</span>
-                <Button variant="text" onClick={onClickLogin}>Log in </Button>
+            <div style={{direction:"rtl"}}>
+                <span>יש לך משתמש?</span>
+                <Button variant="text" onClick={onClickLogin}>התחבר </Button>
             </div>
         </>
     )

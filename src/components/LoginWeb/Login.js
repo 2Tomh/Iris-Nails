@@ -58,15 +58,15 @@ const Login = (props) => {
 
             <h1 className={styles.headline}>הקוסמטיקה של איריס</h1>
 
-            <h2 className={styles.title}>Login</h2>
+            <h2 className={styles.title}>התחבר</h2>
             <TextField label="User Name" variant="outlined" value={username} onChange={(e) => setUserName(e.target.value)} required={true} />
             <TextField label="Password" variant="outlined" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required={true} />
-            <Button variant="outlined" onClick={onLogin}  type="submit">Login</Button>
+            <Button variant="outlined" onClick={onLogin}  type="submit">התחבר</Button>
             {error && <p className={styles.error}>{error}</p>}
-            <Button variant="text" onClick={()=> props.onVerification(true)}>Forgot Password?</Button>
+            <Button variant="text" onClick={()=> props.onVerification(true)}>שכחת סיסמא?</Button>
             <div className={styles.signup}>
-                <span>Dont you have an account?</span>
-                <Button variant="text" onClick={() => props.onClickSignup(false)} >Sign Up</Button>
+                <span>עדיין אין לך משתמש?</span>
+                <Button variant="text" onClick={() => props.onClickSignup(false)} >הרשם</Button>
             </div>
 
         </>

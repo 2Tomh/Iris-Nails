@@ -17,7 +17,7 @@ const Product = (props) => {
     }
 
     const totalCounter = async () => {
-        await newPurchase(total , props.productId)
+        await newPurchase(counter , props.productId)
         setTotal( counter )
     }
 

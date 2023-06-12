@@ -21,14 +21,14 @@ const Signup = (props) => {
         }
         catch(err){
             if(err.response.status == 401){
-                setError("All fields are requierd")
+                setError("לא כל השדות מולאו")
             }
         }
         
     }
 
     return (
-        <>
+        <div>
             <h1 className={styles.title}>Account</h1>
             <h2 className={styles.subtitle}>צעד אחד קטן... ועולם טיפולים חדש ייפתח בפניך</h2>
             <TextField variant="outlined" label="Full Name" value={username} onChange={(e) => setUsername(e.target.value)} required={true} />
@@ -37,12 +37,12 @@ const Signup = (props) => {
             <TextField variant="outlined" label="E-Mail" value={mail} onChange={(e) => setMail(e.target.value)} required={true} />
             <TextField variant="outlined" label="Password" type="password"  value={password} onChange={(e) => setPassword(e.target.value)} required={true}/>
             {error && <p className={styles.error}>{error}</p>}
-            <Button variant="outlined" onClick={onClickSignup} type="submit" >Sign up</Button>
-            <div>
-                <span>Have An account?</span>
-                <Button variant="text" onClick={()=>props.onClickLogin(true)}>Log in </Button>
+            <Button variant="outlined" onClick={onClickSignup} type="submit" >הירשם</Button>
+            <div style={{direction:"rtl"}}>
+                <span>יש לך כבר משתמש?</span>
+                <Button variant="text" onClick={()=>props.onClickLogin(true)}>התחבר</Button>
             </div>
-        </>
+        </div>
     )
 }
 

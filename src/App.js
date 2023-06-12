@@ -20,12 +20,8 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/login" exact element={<Authentication />} />
           <Route path="/treatments" element={<Modal />} />
-          <Route path="/list" element={
-            <ProtectedRoute>
-          <ListAppoitment />
-          </ProtectedRoute>
-          } />
-          <Route path="/product" element={<ListOfProducts />} />
+          <Route path="/list" element={<ProtectedRoute><ListAppoitment /></ProtectedRoute>} />
+          <Route path="/product" element={<ProtectedRoute><ListOfProducts /></ProtectedRoute>} />
           <Route path="/purchases" element={<ListPurchases />} />
         </Routes>
       </UserContextProvider>

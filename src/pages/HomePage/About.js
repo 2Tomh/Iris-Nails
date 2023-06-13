@@ -33,7 +33,7 @@ const About = (props) => {
                     zIndex: "999",
                     position: "absolute",
                     top: isDesktop ? "30%" : "25%",
-                    left: isDesktop ? "62%" : "55%",
+                    left: isDesktop ? "62%" : "50%",
                     display: "flex",
                     flexDirection: "column",
                     direction: "rtl",

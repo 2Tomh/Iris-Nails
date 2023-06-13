@@ -43,6 +43,7 @@ const NavBar = () => {
     return (
         <Box className={styles.text}
          style={{
+            display: isDesktop ? styles.text.display: "inline-table",
             padding: isDesktop ? styles.text.padding : "5px",
             flexDirection: isDesktop ? "row" : "column",
             gap: isDesktop ? styles.text.gap : "20px"
@@ -58,7 +59,7 @@ const NavBar = () => {
                     {user?.userId && <Link onClick={logOut} title="יציאה" to="/" sx={{ fontFamily: "unset" }} > <ExitToAppIcon /></Link>}
 
                 </Nav>
-                <Box style={logoStyle}>
+                <Box className={logoStyle}>
                     <img src={logo} style={{ height: "75px" }} />
                 </Box>
             </Navbar>
@@ -66,15 +67,7 @@ const NavBar = () => {
     );
 };
 
-const containerStyle = {
-    display: "flex",
-    alignItems: "center",
-    flexDirection: 'column',
-    paddingBottom: "20px",
-    gap: '10px',
-};
 const logoStyle = {
-    height: "70%",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",

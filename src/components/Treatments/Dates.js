@@ -25,7 +25,7 @@ const DateComponent = (props) => {
     const validateDate = async () => {
         const response = await getAvailableHour(props.date)
         const bookedHours = response.data;
-        if(bookedHours.length >= 5) return alert("This day is fully booked, try another");
+        if(bookedHours.length >= 5) return alert("יום זה מלא , אנא בחר/י יום אחר");
         props.nextStep();
     }
 

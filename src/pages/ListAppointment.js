@@ -54,11 +54,7 @@ const ListAppoitment = () => {
             a.date > b.date ? -1 : 1))
         setAppointments(newSort)
     }
-    function SortHour() {
-        const newSort = [...appointments].sort((a, b) => (
-            a.hour > b.hour ? -1 : 1))
-        setAppointments(newSort)
-    }
+
     function SortUserName() {
         const newSort = [...appointments].sort((a, b) => (
             a.username > b.username ? -1 : 1))
@@ -95,7 +91,7 @@ const ListAppoitment = () => {
                             </TableCell>
 
                             <TableCell align="center" sx={{ borderBottomColor: "black", fontWeight: "bold", fontSize: "x-large" }}>
-                                <bottom onClick={SortHour}> <HeightIcon /></bottom>שעה
+                                שעה
                             </TableCell>
 
                             <TableCell align="center" sx={{ borderBottomColor: "black", fontWeight: "bold", fontSize: "x-large" }}>סוג טיפול</TableCell>
@@ -131,7 +127,7 @@ const ListAppoitment = () => {
                 />
             </TableContainer>
         </Paper >
-           
+
     )
 }
 

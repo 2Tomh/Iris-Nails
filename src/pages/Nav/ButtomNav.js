@@ -22,7 +22,6 @@ const ButtomNav = () => {
         <div className={styles.text}>
             <Typography variant="subtitle2" >
                     <span style={{ fontWeight: "bold", paddingLeft: "20px", justifycontent: "left" }}>
-                        מספר טלפון: 054-800-0915
                     </span>
                 </Typography>
             <Typography style={{ cursor: 'pointer' }} onClick={onClickMap} >

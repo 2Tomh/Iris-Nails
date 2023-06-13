@@ -21,7 +21,6 @@ const About = (props) => {
                 minHeight: "300px",
                 ...containerStyles,
             }}
-            className="slideshow-container"
         >
 
             <img
@@ -33,8 +32,8 @@ const About = (props) => {
                 style={{
                     zIndex: "999",
                     position: "absolute",
-                    top: isDesktop ? "42%" : "25%",
-                    left: "62%",
+                    top: isDesktop ? "30%" : "25%",
+                    left: isDesktop ? "62%" : "55%",
                     display: "flex",
                     flexDirection: "column",
                     direction: "rtl",
@@ -47,7 +46,8 @@ const About = (props) => {
                 <Typography
                     style={{
                         fontSize: "40px",
-                        fontFamily: "Fredoka, sans- serif",
+                        fontFamily: "Robrto, Helvetica ,Arial, sans-serif",
+                        fontStyle: "italic"
                     }}
                 >
                     הקוסמטיקה של איריס חיון
@@ -65,13 +65,14 @@ const About = (props) => {
             <Box style={{
                 zIndex: "999",
                 position: "absolute",
-                top: isDesktop ? "35%" : "25%",
-                left: "20%",
+                top: isDesktop ? "35%" : "10%",
+                right:isDesktop ? "unset": "20%",
+                left: isDesktop ? "20%" : "unset",
                 display: "flex",
                 flexDirection: "column",
                 direction: "rtl",
                 gap: "50px",
-                paddingRight: isDesktop ? "0px" : "30px",
+                paddingRight: isDesktop ? "0px" : "155px",
                 alignItems: "center",
                 justifyContent: "center",
             }}>
@@ -79,7 +80,8 @@ const About = (props) => {
                     style={{
                         color: "#9b9b9b",
                         fontFamily: "Miriam Libre, sans-serif",
-                        fontSize: "20px",
+                        fontSize: "25px",
+                        fontStyle:"italic"
                     }}
                     textAlign="right">
                     אצלנו תמצאי את כל סוגי הלק, איכות ועיצוב וצורות לק ברמה

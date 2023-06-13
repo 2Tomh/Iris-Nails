@@ -29,11 +29,8 @@ const Availabilty = (props) => {
                 14: takenHours.find((h) => h.hour == 1400) ? false : true,
                 16: takenHours.find((h) => h.hour == 1600) ? false : true,
                 18: takenHours.find((h) => h.hour == 1800) ? false : true
-
             }
-
         })
-
     }
    
 

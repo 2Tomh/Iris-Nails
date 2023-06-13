@@ -29,10 +29,11 @@ const Treatments = (props) => {
             navigate("/")
 
         } catch (err) {
-            if (err.response.status == 403) {
+            if (err.response.status == 403 ) {
                 localStorage.removeItem("token");
                 navigate("/");
             }
+        
         }
     }
 

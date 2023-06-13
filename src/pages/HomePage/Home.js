@@ -48,7 +48,7 @@ const Homepage = () => {
                 style={{
                     display: "flex",
                     margin: isDesktop ? "40px 0px 20px 0px" : "40px 0px 30px 0px",
-                    flexDirection: isDesktop ? "row" : "column",
+                    flexDirection: isDesktop ? "row" : "row",
                     height: isDesktop ? "300px" : "unset",
                     justifyContent: "center",
                     objectfit: "contain"
@@ -80,13 +80,13 @@ const Homepage = () => {
                     }}
                 >
                     <Typography
-                        style={{ fontFamily: "monospace", direction: "rtl" }}
+                        style={{ fontStyle:"italic",fontFamily:"cursive", direction: "rtl" }}
                         variant="h3">
                         מה ניתן לעשות אצלי?
                     </Typography>
 
                     <Typography
-                        style={{ fontFamily: "monospace" }}
+                        style={{ fontFamily: "system-ui" }}
                         variant="h6"
                     >
                         מגוון רב של טיפולים, הכל ייעשה בצורה מדויקת

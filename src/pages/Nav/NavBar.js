@@ -1,7 +1,7 @@
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import styles from "../Nav/NavBar.module.css";
-import { Box , Button } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { Link } from 'react-router-dom';
 import logo from "../images/Logo.png"
 import { useTheme } from "@mui/material/styles";
@@ -38,14 +38,19 @@ const NavBar = () => {
         });
     }, []);
 
- 
+
 
     return (
-        <Box style={{ height: isDesktop ? '70%' : '270px' }}>
+        <Box className={styles.text}
+         style={{
+            padding: isDesktop ? styles.text.padding : "5px",
+            flexDirection: isDesktop ? "row" : "column",
+            gap: isDesktop ? styles.text.gap : "20px"
+        }}>
             <Navbar className={styles.text} >
                 <Nav className={styles.nav} >
                     <Link title="מסך בית" to="/" sx={{ marginRight: "-25%", marginTop: "4%" }}><HomeIcon sx={{ marginTop: "4%" }} /></Link>
-                {!user?.userId && <Link title="התחבר" to="/login" sx={{ marginRight: "-25%", marginTop: "4%" }}><Person2Icon sx={{ marginTop: "4%" }}  /></Link>}
+                    {!user?.userId && <Link title="התחבר" to="/login" sx={{ marginRight: "-25%", marginTop: "4%" }}><Person2Icon sx={{ marginTop: "4%" }} /></Link>}
                     {user?.userId && <Link title="הזמן תור" to="/treatments" sx={{ marginRight: "-25%" }}> <CalendarMonthIcon /></Link>}
                     {user?.isAdmin && <Link title="מעקב אחר לקוחות" className={styles.options} to="/list"><LibraryBooksIcon /> </Link>}
                     {user?.isAdmin && <Link title="מעקב אחר מלאי" className={styles.options} to="/product" sx={{ fontFamily: "chilanka" }}> <InventorySharpIcon /></Link>}
@@ -54,19 +59,20 @@ const NavBar = () => {
 
                 </Nav>
                 <Box style={logoStyle}>
-                    <img src={logo} style={{ height: "75px", marginRight: "14vh" }} />
+                    <img src={logo} style={{ height: "75px" }} />
                 </Box>
             </Navbar>
         </Box>
     );
 };
 
-const buttonStyle = {
-    boxShadow: "inset 0 0 0 1px #8CC63F",
-    borderRadius: "50%",
-    padding: " 9px",
-    borderColor: "blueviolet",
-}
+const containerStyle = {
+    display: "flex",
+    alignItems: "center",
+    flexDirection: 'column',
+    paddingBottom: "20px",
+    gap: '10px',
+};
 const logoStyle = {
     height: "70%",
     display: "flex",

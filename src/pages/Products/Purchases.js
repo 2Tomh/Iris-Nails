@@ -20,10 +20,27 @@ const ListPurchases = () => {
         }
     }
 
+    
+    function formatDate(date) {
+        var d = new Date(date),
+            month = '' + (d.getMonth() + 1),
+            day = '' + d.getDate(),
+            year = d.getFullYear();
+
+        if (month.length < 2)
+            month = '0' + month;
+        if (day.length < 2)
+            day = '0' + day;
+
+        return [year, month, day].join('-');
+    }
+
     useEffect(() => {
         getAllPurchases()
     }, [])
-
+    const current = new Date();
+    const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+  
 
     return (
         <Paper style={{ height: "100vh" }}>
@@ -33,6 +50,8 @@ const ListPurchases = () => {
                     <TableRow>
                         <TableCell align="center" sx={{ borderBottomColor: "black", fontWeight: "bold", fontSize: "x-large" }} >שם</TableCell>
                         <TableCell align="center" sx={{ borderBottomColor: "black", fontWeight: "bold", fontSize: "x-large" }}  > כמות שצריך להזמין</TableCell>
+                        <TableCell align="center" sx={{ borderBottomColor: "black", fontWeight: "bold", fontSize: "x-large" }}  > תאריך</TableCell>
+                            
                     </TableRow>
                 </TableHead>
 
@@ -41,6 +60,7 @@ const ListPurchases = () => {
                         <TableRow>
                             <TableCell align="center" sx={{ borderBottomColor: "black", fontWeight: "bold", fontSize: "x-large" }}> {p.product.name}</TableCell>
                             <TableCell align="center" sx={{ borderBottomColor: "black", fontWeight: "bold", fontSize: "x-large" }}> {p.quantity}</TableCell>
+                            <TableCell align="center" sx={{ borderBottomColor: "black", fontWeight: "bold", fontSize: "x-large" }}> {date}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>

@@ -28,7 +28,7 @@ const Signup = (props) => {
     }
 
     return (
-        <div>
+        <>
             <h1 className={styles.title}>Account</h1>
             <h2 className={styles.subtitle}>צעד אחד קטן... ועולם טיפולים חדש ייפתח בפניך</h2>
             <TextField variant="outlined" label="Full Name" value={username} onChange={(e) => setUsername(e.target.value)} required={true} />
@@ -42,7 +42,7 @@ const Signup = (props) => {
                 <span>יש לך כבר משתמש?</span>
                 <Button variant="text" onClick={()=>props.onClickLogin(true)}>התחבר</Button>
             </div>
-        </div>
+        </>
     )
 }
 

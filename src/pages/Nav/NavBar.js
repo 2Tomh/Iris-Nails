@@ -48,8 +48,14 @@ const NavBar = () => {
             flexDirection: isDesktop ? "row" : "column",
             gap: isDesktop ? styles.text.gap : "20px"
         }}>
-            <Navbar className={styles.text} >
-                <Nav className={styles.nav} >
+            <Navbar className={styles.text}
+            style={{flexDirection: isDesktop ? "unset" : "column",
+                    height: isDesktop ? "unset" : "auto" }} >
+                <Nav className={styles.nav} 
+                    style={{
+                        gap: isDesktop ? styles.nav.gap : "45px"
+                    }}
+                >
                     <Link title="מסך בית" to="/" sx={{ marginRight: "-25%", marginTop: "4%" }}><HomeIcon sx={{ marginTop: "4%" }} /></Link>
                     {!user?.userId && <Link title="התחבר" to="/login" sx={{ marginRight: "-25%", marginTop: "4%" }}><Person2Icon sx={{ marginTop: "4%" }} /></Link>}
                     {user?.userId && <Link title="הזמן תור" to="/treatments" sx={{ marginRight: "-25%" }}> <CalendarMonthIcon /></Link>}

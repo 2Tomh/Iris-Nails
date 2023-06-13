@@ -65,9 +65,9 @@ const About = (props) => {
             <Box style={{
                 zIndex: "999",
                 position: "absolute",
-                top: isDesktop ? "35%" : "10%",
+                top: isDesktop ? "35%" : "0%",
                 right:isDesktop ? "unset": "20%",
-                left: isDesktop ? "20%" : "unset",
+                left: isDesktop ? "10%" : "unset",
                 display: "flex",
                 flexDirection: "column",
                 direction: "rtl",
@@ -86,9 +86,7 @@ const About = (props) => {
                     textAlign="right">
                     אצלנו תמצאי את כל סוגי הלק, איכות ועיצוב וצורות לק ברמה
                     <br />
-                    הגבוה ביותר
-                    <br/><br/><br/>
-                    לקביעת תור אנא התחבר/י
+                    הגבוה ביותר , לקביעת תור אנא התחבר/י
                 </Typography>
             </Box>
         </Box>

@@ -87,7 +87,11 @@ const Availabilty = (props) => {
 
                     </ToggleButtonGroup>
                 </div>
-                <Button variant="outlined" onClick={props.onSubmit}>אישור</Button>
+                <Button variant="outlined" onClick={props.onSubmit}
+                style={{width:"100%",
+                        borderBottomColor:"currentcolor",
+                        borderRadius:"15px"  }}          
+                >אישור</Button>
             </form>
 
         </div>

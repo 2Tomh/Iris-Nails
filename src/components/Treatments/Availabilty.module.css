@@ -1,9 +1,9 @@
 .container{
-    height:68vh;
+    height:60vh;
     display:flex;
-    align-items: center;
     justify-content: center;
     flex-direction: column;
+    align-items: center;
 
 }
 

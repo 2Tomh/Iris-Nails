@@ -9,14 +9,17 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from "@mui/material/Paper";
 import TablePagination from '@mui/material/TablePagination';
-
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
 
 
 const ListOfProducts = () => {
     const [products, setProducts] = useState([])
-const [pg, setpg] = useState(0);
+    const [pg, setpg] = useState(0);
     const [rpg, setrpg] = useState(5);
-    
+    const theme = useTheme();
+    const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));
+
     const fetchProducts = async () => {
         const response = await getProducts();
         setProducts(response.data)
@@ -46,7 +49,14 @@ const [pg, setpg] = useState(0);
     return (
         <Paper style={{ height: "100%" }}>
             <h1 style={{ textAlign: "center", color: "black" }}>ניהול מלאי</h1> <br /><br />
-            <TableContainer sx={{ background: "none", width: "65%", marginLeft: "20%", marginRight: "50%" }} component={Paper} >
+            <TableContainer
+                sx={{
+                    background: "none",
+                    width: isDesktop ? "65%" : "92%",
+                    marginLeft: isDesktop ? "20%" : "5%",
+                    marginRight: isDesktop ? "50%" : "0%",
+
+                }} component={Paper} >
                 <Table size="small" aria-label="simple table" sx={{ minWidth: 650 }}>
                     <TableHead>
                         <TableRow >
@@ -63,7 +73,7 @@ const [pg, setpg] = useState(0);
 
                     <TableBody>
                         {products.length > 0 && products.slice(pg * rpg, pg * rpg + rpg).map((p, index) => (
-                            <Product key={index} quantity={p.quantity} name={p.name} price={p.price} category={p.category} image={p.image} productId={p._id}/>
+                            <Product key={index} quantity={p.quantity} name={p.name} price={p.price} category={p.category} image={p.image} productId={p._id} />
 
                         ))}
                     </TableBody>

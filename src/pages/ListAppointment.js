@@ -12,7 +12,8 @@ import TablePagination from '@mui/material/TablePagination';
 import Paper from "@mui/material/Paper";
 import { useContext } from 'react';
 import { UserContext } from '../context/userContext';
-
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
 
 const ListAppoitment = () => {
     const { user } = useContext(UserContext);
@@ -20,6 +21,8 @@ const ListAppoitment = () => {
     const [pg, setpg] = useState(0);
     const [rpg, setrpg] = useState(5);
     const navigate = useNavigate()
+    const theme = useTheme();
+    const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));
 
     const getAllAppointments = async () => {
         try {
@@ -76,9 +79,15 @@ const ListAppoitment = () => {
     }
 
     return (
-        <Paper style={{ background: "rgb(240 128 224 / 16%)", height: "150vh" }}>
+        <Paper style={{ background: "rgb(240 128 224 / 16%)", height: "100vh" }}>
             <h1 style={{ textAlign: "center", color: "black" }}>מעקב אחר הזמנות</h1>
-            <TableContainer sx={{ border: "double", width: "50%", marginLeft: "25%", marginRight: "50%" }} component={Paper} >
+            <TableContainer
+                sx={{
+                    border: "double",
+                    width: isDesktop ? "50%": "85%",
+                    marginLeft: isDesktop ? "25%" : "5%",
+                    marginRight: "50%"
+                }} component={Paper} >
                 <Table size="small" aria-label="simple table" sx={{ minWidth: 650 }}>
                     <TableHead>
                         <TableRow>

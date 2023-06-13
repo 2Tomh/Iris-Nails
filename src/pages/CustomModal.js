@@ -1,14 +1,19 @@
 import { Modal } from "@mui/material";
 import Treatments from "./Treatments";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
 
 const CustomModal = (props) => {
- 
+  const theme = useTheme();
+  const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));
 
   
   return (
-    <Modal open={props.open} className="slide-top" style={{ height: "112vh" }}>
+    <Modal open={props.open} className="slide-top" 
+    style={{ height: "112vh"}}>
       <div
-        style={{ ...styles.content, ...props.modalStyles }}
+        style={{ ...styles.content, ...props.modalStyles,
+          width: isDesktop ? "550px" :"360px", }}
         className="modalContainer">
         
       <span style={{...styles.closeButton}} onClick={props.close} >X</span>
@@ -20,9 +25,6 @@ const CustomModal = (props) => {
 
 const styles = {
   content: {
-    width: "700px",
-    maxheight: "700px",
-    background: "white",
     bottom: "145px",
     right: "50%",
     transform: "translate(-50%, 0)",

@@ -4,9 +4,14 @@ import { Typography } from "@mui/material";
 import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import FacebookTwoToneIcon from '@mui/icons-material/FacebookTwoTone';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
+
 
 const ButtomNav = () => {
-
+    const theme = useTheme();
+    const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));
+    
     const onClickInstagram = () => {
         window.open(`https://www.instagram.com/iris_hayoun_nails/`)
         window.open('')
@@ -19,11 +24,13 @@ const ButtomNav = () => {
     }
 
     return (
-        <div className={styles.text}>
+        <div className={styles.text}
+        style={{columnGap: isDesktop? "5%" : "normal"}}>
             <Typography variant="subtitle2" >
                     <span style={{ fontWeight: "bold", paddingLeft: "20px", justifycontent: "left" }}>
                     </span>
                 </Typography>
+                <Typography><p className={styles.text}>&copy; 2023 הקליניקה של איריס חיון , כל הזכויות שמורות</p></Typography>
             <Typography style={{ cursor: 'pointer' }} onClick={onClickMap} >
                 <FmdGoodIcon />
                 </Typography>
@@ -33,7 +40,7 @@ const ButtomNav = () => {
             <Typography style={{ cursor: 'pointer' }} onClick={onClickInstagram}  >
                 <InstagramIcon />
                 </Typography>
-            <p className={styles.text}>&copy; 2023 הקליניקה של איריס חיון , כל הזכויות שמורות</p>
+            
 
         </div>
     );

@@ -37,6 +37,7 @@ const DateComponent = (props) => {
                     <h1 className={styles.h1}>אנא בחר תאריך</h1>
                     <DateCalendar onChange={onChangeDate} className={styles.calander} disablePast shouldDisableDate={valid} />
                 </LocalizationProvider>
+                <br/>
                 <Button variant="outlined" onClick={validateDate} sx={{ width: '-webkit-fill-available', borderRadius: '17px' }} disabled={!props.date}>אישור</Button>
             </form>
         </div>

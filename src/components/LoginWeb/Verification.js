@@ -7,19 +7,19 @@ import styles from './Verification.module.css'
 const Verification = (props) => {
     const [username, setUserName] = useState("");
     const [error, setError] = useState("");
-    
+
     const onVerification = async (e) => {
         e.preventDefault()
         try {
-            if(!username){
+            if (!username) {
                 return handleError("All fields are required", 5000)
 
             }
             await verification(username)
 
         }
-        catch(err){
-            if(err.response.status == 401){
+        catch (err) {
+            if (err.response.status == 401) {
                 setError("Email doesn't exist")
             }
         }
@@ -43,7 +43,7 @@ const Verification = (props) => {
             <TextField label="User Name" variant="outlined" value={username} onChange={(e) => setUserName(e.target.value)} required={true} />
             {error && <p className={styles.error}>{error}</p>}
             <Button variant="text" type="submit" onClick={onVerification}>  אימות</Button>
-            <div style={{direction:"rtl"}}>
+            <div style={{ direction: "rtl" }}>
                 <span>יש לך משתמש?</span>
                 <Button variant="text" onClick={onClickLogin}>התחבר </Button>
             </div>

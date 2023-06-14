@@ -56,7 +56,7 @@ const Product = (props) => {
             </TableCell>
             <TableCell align="center" sx={{ borderBottomColor: "black", fontWeight: "bold", fontSize: "1.5rem" }}>{props.price}</TableCell>
             <TableCell align="center" sx={{ borderBottomColor: "black", fontWeight: "bold", fontSize: "1.5rem" }}>{props.category}</TableCell>
-            <TableCell align="center" sx={{ borderBottomColor: "black", fontWeight: "bold", fontSize: "1.5rem" }}>{quantity-total}</TableCell>
+            <TableCell align="center" sx={{ borderBottomColor: "black", fontWeight: "bold", fontSize: "1.5rem" }}>{total}</TableCell>
 
         </TableRow>
     )

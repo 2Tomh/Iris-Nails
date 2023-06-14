@@ -39,12 +39,13 @@ const Product = (props) => {
             <TableCell align="center" sx={{ borderBottomColor: "black", fontWeight: "bold" }}><img className={styles.img} src={props.image} /></TableCell>
             <TableCell align="center" sx={{ borderBottomColor: "black", fontWeight: "bold", fontSize: "1.5rem" }}><tr />{props.name}</TableCell>
             <TableCell align="center" sx={{ borderBottomColor: "black", fontWeight: "bold", fontSize: "1.5rem" }} >{props.quantity}</TableCell>
-            <TableCell align="center" 
-            styles={{ 
-                borderBottomColor: "black",
-                 fontWeight: "bold",
-                  fontSize: "1.5rem",
-                  padding: isDesktop ? "6px 16px": "-10px" }}>
+            <TableCell align="center"
+                styles={{
+                    borderBottomColor: "black",
+                    fontWeight: "bold",
+                    fontSize: "1.5rem",
+                    padding: isDesktop ? "6px 16px" : "-10px"
+                }}>
                 <button onClick={increase} style={{ background: "none", border: "none" }}><AddCircleOutlineSharpIcon /></button>
                 {counter}
                 <button onClick={decrease} style={{ background: "none", border: "none" }}><RemoveCircleOutlineSharpIcon /></button>

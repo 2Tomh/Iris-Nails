@@ -38,7 +38,7 @@ const About = (props) => {
                     flexDirection: "column",
                     direction: "rtl",
                     gap: "15px",
-                    paddingRight: isDesktop ? "0px" : "30px",
+                    paddingRight: isDesktop ? "30px" : "none",
                     alignItems: "center",
                     justifyContent: "center",
                 }}
